@@ -43,6 +43,20 @@ struct Validator {
         let emailRegex = #"^\S+@\S+\.\S+$"#
         return email.range(of: emailRegex, options: .regularExpression) != nil
     }
+    
+    static func isEven(_ number: Int) -> Bool {
+        return number % 2 == 0
+    }
+    
+    static func isAdult(_ age: Int) -> Bool {
+        return age >= 18
+    }
+    
+    static func isPalindrome(_ word: String) -> Bool {
+        let cleaned = word.lowercased()
+        return cleaned == String(cleaned.reversed())
+    }
+
 }
 
 struct UserFormatter {

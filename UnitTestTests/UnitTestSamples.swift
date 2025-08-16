@@ -54,13 +54,25 @@ final class UnitTestSamples: XCTestCase {
         XCTAssertEqual(user, expected, "Expected to find user Bob")
     }
 
-
-    
     func testFindUserReturnsNilForUnknownName() {
         let user = UserService.findUser(name: "Charlie")
         XCTAssertNil(user, "Expected no user found for 'Charlie'")
     }
     
+    func testIsNumberEven() {
+        let result = Validator.isEven(4)
+        XCTAssertTrue(result, "Expected number to return true")
+    }
     
+    func testIsAdult() {
+        let result = Validator.isAdult(18)
+        XCTAssertTrue(result, "Expected age to return true")
+    }
+    
+    func testIsPalindrome() {
+        let result = Validator.isPalindrome("level")
+        XCTAssertTrue(result, "Expected 'level' to be a palindrome")
+    }
+
     
 }
